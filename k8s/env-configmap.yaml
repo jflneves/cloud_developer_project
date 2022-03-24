@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: arn:aws:s3:::udagram-jflneves-bucket
+  AWS_PROFILE: default
+  AWS_REGION: eu-central-1
+  JWT_SECRET: jwtverysecret
+  POSTGRES_DB: udagramjflnevesdb
+  POSTGRES_HOST: udagramjflnevesdb.cloknzutaws3.eu-central-1.rds.amazonaws.com
+  URL: http://localhost:8100
+metadata:
+  name: env-config
