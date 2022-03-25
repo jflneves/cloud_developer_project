@@ -1,9 +1,9 @@
 node {
-    stage('Build') {
-		docker-compose -f docker-compose-local.yml build
+    stage('checkout') {
+		checkout scm
     }
     stage('Test') {
-        echo 'Testing....'
+        sh docker-compose -f docker-compose-local.yml build
     }
     stage('Deploy') {
         echo 'Deploying....'
