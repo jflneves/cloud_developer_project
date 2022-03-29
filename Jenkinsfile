@@ -3,7 +3,7 @@ node {
 		checkout scm
     }
     stage('Test') {
-        sh "docker-compose -f docker-compose-local.yml build"
+        docker-compose -f docker-compose-local.yml build
     }
     stage('Deploy') {
         echo 'Deploying....'
