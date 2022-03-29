@@ -9,7 +9,7 @@ node {
 		sh "ls"
     }
     stage('Test') {
-        sh "docker-compose -f .docker-compose-local.yml build"
+        sh "docker-compose -f docker-compose-local.yml build"
     }
     stage('Deploy') {
         echo 'Deploying....'
