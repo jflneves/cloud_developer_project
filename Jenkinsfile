@@ -7,7 +7,9 @@ node {
     }
 
     stage('Login') {
-        sh "docker login"
+        withCredentials([usernamePassword(credentialsId: 'dockerregistry', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+			sh "docker login -u $USERNAME -p $PASSWORD
+		}
     }
     stage('Push') {
         sh "docker-compose -f docker-compose-local.yml push"
