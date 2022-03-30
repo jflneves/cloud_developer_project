@@ -3,7 +3,7 @@ node {
 		checkout scm
     }
     stage('Build') {
-        sh "docker-compose -f docker-compose-local.yml build"
+        sh "docker-compose build"
     }
 
     stage('Login') {
@@ -12,6 +12,6 @@ node {
 		}
     }
     stage('Push') {
-        sh "docker-compose -f docker-compose-local.yml push"
+        sh "docker-compose push"
     }
 }
